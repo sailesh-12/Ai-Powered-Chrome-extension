@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "AI Page Summarizer",
+    "version": "1.0.0",
+    "description": "Generate intelligent summaries of any webpage using Gemini AI",
+    "permissions": [
+        "activeTab",
+        "storage",
+        "scripting"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": {
+            "16": "icon128.png",
+            "48": "icon128.png",
+            "128": "icon128.png"
+        },
+        "default_title": "Summarize this page"
+    },
+    "icons": {
+        "16": "icon128.png",
+        "48": "icon128.png",
+        "128": "icon128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}
